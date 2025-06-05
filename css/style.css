@@ -5823,8 +5823,8 @@ table .ticket-row:hover {
   position: relative;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
   animation: popupFadeIn 0.5s ease;
-  margin: 20px 0;            /* ✅ cách trên và dưới mỗi bên 20px */
-  max-height: 90vh;          /* ✅ tránh tràn màn hình */
+  margin: 20px 0;            
+  max-height: 90vh; 
 }
 
 .popup-content h2 {
@@ -5837,7 +5837,7 @@ table .ticket-row:hover {
 .popup-content p {
   font-size: 1.8rem;
   color: #444;
-  margin-bottom: 25px;
+  margin-bottom: 0px;
 }
 
 .popup-content .popup-image {
