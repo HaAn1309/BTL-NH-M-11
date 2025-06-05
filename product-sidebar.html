@@ -6,9 +6,9 @@
         content="TeaBliss, bootstrap-5, bootstrap, sass, css, HTML Template, HTML,html, bootstrap template, free template, figma, web design, web development,front end, bootstrap datepicker, bootstrap timepicker, javascript, ecommerce template">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="assets/images/logos/anhlogovuong1.png"> <!--THAY LOGO-->
+    <link rel="icon" href="assets/images/logos/anhlogovuong(1).png"> <!--THAY LOGO-->
     <!--title  -->
-    <title>TeaBliss - không gian trà thưởng thức</title>
+    <title>TeaBliss - Không gian trà thưởng thức</title>
     <!--------------- swiper-css ---------------->
     <link rel="stylesheet" href="css/swiper10-bundle.min.css">
 
@@ -23,7 +23,25 @@
 
     <!--------------- additional-css ---------------->
     <link rel="stylesheet" href="css/style.css">
+ 
 </head>
+<script>
+  function selectBoxHandler(id) {
+    const box = document.querySelector(`#${id} .slectbox-body`);
+    if (box) {
+      const isOpen = box.style.display === 'block';
+      box.style.display = isOpen ? 'none' : 'block';
+    }
+  }
+
+  function tooglmenu() {
+    const menu = document.getElementById('subMenu');
+    if (menu) {
+      const isOpen = menu.style.display === 'block';
+      menu.style.display = isOpen ? 'none' : 'block';
+    }
+  }
+</script>
 <body>
 
     <!--------------- header-section --------------->
@@ -160,7 +178,7 @@
                             </a>
                         </div>
                         <div class="header-user">
-                            <a href="user-profile.html" class=""account-icon">
+                            <a href="user-profile.html" class="account-icon">
                                 <span>
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -404,7 +422,7 @@
     <button id="backToTop" class="back-to-top">↑</button>
 
 
-    <!--------------- products-sidebar-section--------------->
+<!--------------- products-sidebar-section--------------->
     <section class="product product-sidebar footer-padding">
         <div class="container">
             <div class="row g-5">
@@ -412,26 +430,26 @@
                     <div class="sidebar" data-aos="fade-right">
                         <div class="sidebar-section box-shadows">
                             <div class="sidebar-wrapper">
-                                <h3 class="wrapper-heading">Product Categories</h3>
+                                <h3 class="wrapper-heading">Danh mục sản phẩm</h3>
                                 <div class="sidebar-item">
                                     <ul class="sidebar-list">
                                         <li>
                                             <input type="checkbox" id="veg" name="veg">
-                                            <label for="veg">Vegetable</label>
+                                            <label for="veg">Trà nguyên vị</label>
                                         </li>
                                         <li>
                                             <input type="checkbox" id="fruits" name="fruits">
-                                            <label for="fruits">Fruits</label>
+                                            <label for="fruits">Trà hoa</label>
                                         </li>
                                         <li>
                                             <input type="checkbox" id="juice" name="juice">
-                                            <label for="juice">Juice</label>
+                                            <label for="juice">Trà thảo mộc</label>
                                         </li>
                                         <li>
                                             <input type="checkbox" id="meat" name="meat">
-                                            <label for="meat">Meat</label>
+                                            <label for="meat">Dụng cụ pha trà</label>
                                         </li>
-                                        <li>
+                                     <!---   <li>
                                             <input type="checkbox" id="smoothie" name="smoothie">
                                             <label for="smoothie">Smoothie</label>
                                         </li>
@@ -458,7 +476,7 @@
                                         <li>
                                             <input type="checkbox" id="protein" name="protein">
                                             <label for="protein">Protein</label>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -476,7 +494,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <hr>
+                       <!--     <hr>
                             <div class="sidebar-wrapper">
                                 <h3 class="wrapper-heading">Brands</h3>
                                 <div class="sidebar-item">
@@ -529,7 +547,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <hr>
+                            <hr> -->
                             <div class="sidebar-wrapper">
                                 <h3 class="wrapper-heading">Weight</h3>
                                 <div class="sidebar-item">
@@ -558,7 +576,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="sidebar-shop-section">
+                      <!----  <div class="sidebar-shop-section">
                             <span class="wrapper-subtitle">TRENDY</span>
                             <h3 class="wrapper-heading">Best wireless Shoes</h3>
                             <a href="seller-sidebar.html" class="shop-btn deal-btn">Shop Now
@@ -572,7 +590,7 @@
                                     </svg>
                                 </span>
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="col-lg-9">
@@ -581,13 +599,13 @@
                             <div class="col-lg-12">
                                 <div class="product-sorting-section box-shadows">
                                     <div class="result">
-                                        <p>Showing <span>1–16 of 66 results</span></p>
+                                        <p>Hiển thị <span>1–16 trong số 66 kết quả</span></p>
                                     </div>
                                     <div class="product-sorting">
-                                        <span class="product-sort">Sort by:</span>
+                                        <span class="product-sort">Sắp xếp:</span>
                                         <div id="allitem">
                                             <div class="product-list" onclick="selectBoxHandler('allitem')">
-                                                <span class="default item-text">Default</span>
+                                                <span class="default item-text">Mặc định</span>
                                                 <span>
                                                     <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -599,16 +617,16 @@
                                                 <div class="clickAway position-fixed"
                                                     onclick="selectBoxHandler('allitem')"></div>
                                                 <ul class="country-options">
-                                                    <li class="all-option"><span class="option-text item-text">Vegetable
+                                                    <li class="all-option"><span class="option-text item-text">Trà nguyên vị
                                                         </span></li>
                                                     <li class="all-option"><span
-                                                            class="option-text item-text">Fruits</span>
+                                                            class="option-text item-text">Trà hoa</span>
                                                     </li>
                                                     <li class="all-option"><span
-                                                            class="option-text item-text">Juice</span>
+                                                            class="option-text item-text">Trà thảo mộc</span>
                                                     </li>
                                                     <li class="all-option"><span
-                                                            class="option-text item-text">Meat</span>
+                                                            class="option-text item-text">Dụng cụ pha trà</span>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -619,7 +637,7 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="product-wrapper" data-aos="fade-up">
                                     <div class="product-img">
-                                        <img src="assets/images/homepage-one/product-img/p-img-1.webp"
+                                        <img src="assets/images/nguyen-vi/trà atiso.png"
                                             alt="product-img">
                                         <div class="product-cart-items">
                                             <a href="#" class="cart cart-item">
@@ -707,16 +725,16 @@
                                                         fill="#FFA800" />
                                                     <path
                                                         d="M67.5 0L69.1839 5.18237H74.6329L70.2245 8.38525L71.9084 13.5676L67.5 10.3647L63.0916 13.5676L64.7755 8.38525L60.3671 5.18237H65.8161L67.5 0Z"
-                                                        fill="#FFA800" />
+                                                        fill="#FFA800" /> 
                                                 </svg>
                                             </span>
                                         </div>
                                         <div class="product-description">
-                                            <a href="product-info.html" class="product-details">Fresh Red Tomatos
+                                            <a href="product-info.html" class="product-details" title="Trà Atiso">Trà Atiso
                                             </a>
                                             <div class="price">
-                                                <span class="price-cut">$12.99</span>
-                                                <span class="new-price">$6.99</span>
+                                                <span class="price-cut">65.000₫</span>
+                                                <span class="new-price">40.000₫</span>
                                             </div>
                                         </div>
                                         <div class="product-cart-btn">
@@ -729,7 +747,7 @@
                                                         </path>
                                                     </svg>
                                                 </span>
-                                                <span class="btn-text">Add To Cart</span>
+                                                <span class="btn-text">Thêm vào giỏ hàng</span>
                                             </a>
                                         </div>
                                     </div>
@@ -738,7 +756,7 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="product-wrapper" data-aos="fade-up">
                                     <div class="product-img">
-                                        <img src="assets/images/homepage-one/product-img/p-img-2.webp"
+                                        <img src="assets/images/thao-moc/Hắc Kỷ Tử sấy khô.png"
                                             alt="product-img">
                                         <div class="product-cart-items">
                                             <a href="#" class="cart cart-item">
@@ -824,18 +842,18 @@
                                                     <path
                                                         d="M52.5 0L54.1839 5.18237H59.6329L55.2245 8.38525L56.9084 13.5676L52.5 10.3647L48.0916 13.5676L49.7755 8.38525L45.3671 5.18237H50.8161L52.5 0Z"
                                                         fill="#FFA800" />
-                                                    <path
+                                                  <!--  <path
                                                         d="M67.5 0L69.1839 5.18237H74.6329L70.2245 8.38525L71.9084 13.5676L67.5 10.3647L63.0916 13.5676L64.7755 8.38525L60.3671 5.18237H65.8161L67.5 0Z"
-                                                        fill="#FFA800" />
+                                                        fill="#FFA800" />-->
                                                 </svg>
                                             </span>
                                         </div>
                                         <div class="product-description">
-                                            <a href="product-info.html" class="product-details">Fresh Red Tomatos
+                                            <a href="product-info.html" class="product-details" title="Trà Hắc tử kỳ sấy khô">Trà Hắc tử kỳ sấy khô
                                             </a>
                                             <div class="price">
-                                                <span class="price-cut">$12.99</span>
-                                                <span class="new-price">$6.99</span>
+                                                <span class="price-cut">90.000₫</span>
+                                                <span class="new-price">75.000₫</span>
                                             </div>
                                         </div>
                                         <div class="product-cart-btn">
@@ -848,7 +866,7 @@
                                                         </path>
                                                     </svg>
                                                 </span>
-                                                <span class="btn-text">Add To Cart</span>
+                                                <span class="btn-text">Thêm vào giỏ hàng</span>
                                             </a>
                                         </div>
                                     </div>
@@ -857,7 +875,7 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="product-wrapper" data-aos="fade-up">
                                     <div class="product-img">
-                                        <img src="assets/images/homepage-one/product-img/p-img-3.webp"
+                                        <img src="assets/images/hoa/Trà hoa kim ngân.png"
                                             alt="product-img">
                                         <div class="product-cart-items">
                                             <a href="#" class="cart cart-item">
@@ -943,18 +961,18 @@
                                                     <path
                                                         d="M52.5 0L54.1839 5.18237H59.6329L55.2245 8.38525L56.9084 13.5676L52.5 10.3647L48.0916 13.5676L49.7755 8.38525L45.3671 5.18237H50.8161L52.5 0Z"
                                                         fill="#FFA800" />
-                                                    <path
+                                                 <!--   <path
                                                         d="M67.5 0L69.1839 5.18237H74.6329L70.2245 8.38525L71.9084 13.5676L67.5 10.3647L63.0916 13.5676L64.7755 8.38525L60.3671 5.18237H65.8161L67.5 0Z"
-                                                        fill="#FFA800" />
+                                                        fill="#FFA800" />-->
                                                 </svg>
                                             </span>
                                         </div>
                                         <div class="product-description">
-                                            <a href="product-info.html" class="product-details">Fresh Red Tomatos
+                                            <a href="product-info.html" class="product-details" title="Trà hoa kim ngân">Trà hoa kim ngân
                                             </a>
                                             <div class="price">
-                                                <span class="price-cut">$12.99</span>
-                                                <span class="new-price">$6.99</span>
+                                                <span class="price-cut">45.000₫</span>
+                                                <span class="new-price">35.000₫</span>
                                             </div>
                                         </div>
                                         <div class="product-cart-btn">
@@ -967,7 +985,7 @@
                                                         </path>
                                                     </svg>
                                                 </span>
-                                                <span class="btn-text">Add To Cart</span>
+                                                <span class="btn-text">Thêm vào giỏ hàng</span>
                                             </a>
                                         </div>
                                     </div>
@@ -976,7 +994,7 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="product-wrapper" data-aos="fade-up">
                                     <div class="product-img">
-                                        <img src="assets/images/homepage-one/product-img/p-img-4.webp"
+                                        <img src="assets/images/dung-cu/bộ ấm.jpg"
                                             alt="product-img">
                                         <div class="product-cart-items">
                                             <a href="#" class="cart cart-item">
@@ -1069,11 +1087,11 @@
                                             </span>
                                         </div>
                                         <div class="product-description">
-                                            <a href="product-info.html" class="product-details">Fresh Red Tomatos
+                                            <a href="product-info.html" class="product-details" title="Bộ ấm chén đối ẩm Kintsugi">Bộ ấm chén đối ẩm Kintsugi
                                             </a>
                                             <div class="price">
-                                                <span class="price-cut">$12.99</span>
-                                                <span class="new-price">$6.99</span>
+                                                <span class="price-cut">450.000₫</span>
+                                                <span class="new-price">400.000₫</span>
                                             </div>
                                         </div>
                                         <div class="product-cart-btn">
@@ -1086,7 +1104,7 @@
                                                         </path>
                                                     </svg>
                                                 </span>
-                                                <span class="btn-text">Add To Cart</span>
+                                                <span class="btn-text">Thêm vào giỏ hàng</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1095,7 +1113,7 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="product-wrapper" data-aos="fade-up">
                                     <div class="product-img">
-                                        <img src="assets/images/homepage-one/product-img/p-img-5.webp"
+                                        <img src="assets/images/hoa/Hoa oải hương.png"
                                             alt="product-img">
                                         <div class="product-cart-items">
                                             <a href="#" class="cart cart-item">
@@ -1188,11 +1206,11 @@
                                             </span>
                                         </div>
                                         <div class="product-description">
-                                            <a href="product-info.html" class="product-details">Fresh Red Tomatos
+                                            <a href="product-info.html" class="product-details" title="Trà Hoa oải hương 100g">Trà Hoa oải hương 100g
                                             </a>
                                             <div class="price">
-                                                <span class="price-cut">$12.99</span>
-                                                <span class="new-price">$6.99</span>
+                                                <span class="price-cut">135.000₫</span>
+                                                <span class="new-price">110.000₫</span>
                                             </div>
                                         </div>
                                         <div class="product-cart-btn">
@@ -1205,7 +1223,7 @@
                                                         </path>
                                                     </svg>
                                                 </span>
-                                                <span class="btn-text">Add To Cart</span>
+                                                <span class="btn-text">Thêm vào giỏ hàng</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1214,7 +1232,7 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="product-wrapper" data-aos="fade-up">
                                     <div class="product-img">
-                                        <img src="assets/images/homepage-one/product-img/p-img-6.webp"
+                                        <img src="assets/images/nguyen-vi/trà shan tuyết.png"
                                             alt="product-img">
                                         <div class="product-cart-items">
                                             <a href="#" class="cart cart-item">
@@ -1307,11 +1325,11 @@
                                             </span>
                                         </div>
                                         <div class="product-description">
-                                            <a href="product-info.html" class="product-details">Fresh Red Tomatos
+                                            <a href="product-info.html" class="product-details" title="Trà Shan tuyết 100g">Trà Shan tuyết 100g
                                             </a>
                                             <div class="price">
-                                                <span class="price-cut">$12.99</span>
-                                                <span class="new-price">$6.99</span>
+                                                <span class="price-cut">200.000₫</span>
+                                                <span class="new-price">180.000₫</span>
                                             </div>
                                         </div>
                                         <div class="product-cart-btn">
@@ -1324,7 +1342,7 @@
                                                         </path>
                                                     </svg>
                                                 </span>
-                                                <span class="btn-text">Add To Cart</span>
+                                                <span class="btn-text">Thêm vào giỏ hàng</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1332,8 +1350,8 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="product-deal-section" data-aos="fade-up">
-                                    <h3 class="wrapper-heading">Get the best deal for Grocery Items</h3>
-                                    <a href="seller-sidebar.html" class="shop-btn">Shop Now
+                                    <h3 class="wrapper-heading">Nhận ưu đãi tốt nhất cho các mặt hàng</h3>
+                                    <a href="seller-sidebar.html" class="shop-btn">Mua ngay
                                         <span>
                                             <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1349,7 +1367,7 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="product-wrapper" data-aos="fade-up">
                                     <div class="product-img">
-                                        <img src="assets/images/homepage-one/product-img/p-img-7.webp"
+                                        <img src="assets/images/dung-cu/khay trúc.jpg"
                                             alt="product-img">
                                         <div class="product-cart-items">
                                             <a href="#" class="cart cart-item">
@@ -1442,11 +1460,11 @@
                                             </span>
                                         </div>
                                         <div class="product-description">
-                                            <a href="product-info.html" class="product-details">Fresh Red Tomatos
+                                            <a href="product-info.html" class="product-details" title="Khay trà trúc kèm gác chén">Khay trà trúc kèm gác chén
                                             </a>
                                             <div class="price">
-                                                <span class="price-cut">$12.99</span>
-                                                <span class="new-price">$6.99</span>
+                                                <span class="price-cut">832.000₫</span>
+                                                <span class="new-price">790.000₫</span>
                                             </div>
                                         </div>
                                         <div class="product-cart-btn">
@@ -1459,7 +1477,7 @@
                                                         </path>
                                                     </svg>
                                                 </span>
-                                                <span class="btn-text">Add To Cart</span>
+                                                <span class="btn-text">Thêm vào giỏ hàng</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1468,7 +1486,7 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="product-wrapper" data-aos="fade-up">
                                     <div class="product-img">
-                                        <img src="assets/images/homepage-one/product-img/p-img-8.webp"
+                                        <img src="assets/images/thao-moc/Trà hoa nhài mix ngũ vị.png"
                                             alt="product-img">
                                         <div class="product-cart-items">
                                             <a href="#" class="cart cart-item">
@@ -1561,11 +1579,11 @@
                                             </span>
                                         </div>
                                         <div class="product-description">
-                                            <a href="product-info.html" class="product-details">Fresh Red Tomatos
+                                            <a href="product-info.html" class="product-details" title="Trà Hoa cúc mix ngũ vị">Trà Hoa cúc mix ngũ vị
                                             </a>
                                             <div class="price">
-                                                <span class="price-cut">$12.99</span>
-                                                <span class="new-price">$6.99</span>
+                                                <span class="price-cut">260.000₫</span>
+                                                <span class="new-price">169.000₫</span>
                                             </div>
                                         </div>
                                         <div class="product-cart-btn">
@@ -1578,7 +1596,7 @@
                                                         </path>
                                                     </svg>
                                                 </span>
-                                                <span class="btn-text">Add To Cart</span>
+                                                <span class="btn-text">Thêm vào giỏ hàng</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1587,7 +1605,7 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="product-wrapper" data-aos="fade-up">
                                     <div class="product-img">
-                                        <img src="assets/images/homepage-one/product-img/p-img-9.webp"
+                                        <img src="assets/images/nguyen-vi/trà matcha.png"
                                             alt="product-img">
                                         <div class="product-cart-items">
                                             <a href="#" class="cart cart-item">
@@ -1680,11 +1698,11 @@
                                             </span>
                                         </div>
                                         <div class="product-description">
-                                            <a href="product-info.html" class="product-details">Fresh Red Tomatos
+                                            <a href="product-info.html" class="product-details" title="Trà xanh Matcha 40g">Trà xanh Matcha 40g
                                             </a>
                                             <div class="price">
-                                                <span class="price-cut">$12.99</span>
-                                                <span class="new-price">$6.99</span>
+                                                <span class="price-cut">169.000₫</span>
+                                                <span class="new-price">83.000₫</span>
                                             </div>
                                         </div>
                                         <div class="product-cart-btn">
@@ -1697,7 +1715,7 @@
                                                         </path>
                                                     </svg>
                                                 </span>
-                                                <span class="btn-text">Add To Cart</span>
+                                                <span class="btn-text">Thêm vào giỏ hàng</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1706,7 +1724,7 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="product-wrapper" data-aos="fade-up">
                                     <div class="product-img">
-                                        <img src="assets/images/homepage-one/product-img/p-img-10.webp"
+                                        <img src="assets/images/dung-cu/túi đựng.jpg"
                                             alt="product-img">
                                         <div class="product-cart-items">
                                             <a href="#" class="cart cart-item">
@@ -1799,11 +1817,11 @@
                                             </span>
                                         </div>
                                         <div class="product-description">
-                                            <a href="product-info.html" class="product-details">Fresh Red Tomatos
+                                            <a href="product-info.html" class="product-details" title="Bộ ấm chén du lịch vẽ pháp lam hộp da">Bộ ấm chén du lịch vẽ pháp lam hộp da
                                             </a>
                                             <div class="price">
-                                                <span class="price-cut">$12.99</span>
-                                                <span class="new-price">$6.99</span>
+                                                <span class="price-cut">400.000₫</span>
+                                                <span class="new-price">300.000₫</span>
                                             </div>
                                         </div>
                                         <div class="product-cart-btn">
@@ -1816,7 +1834,7 @@
                                                         </path>
                                                     </svg>
                                                 </span>
-                                                <span class="btn-text">Add To Cart</span>
+                                                <span class="btn-text">Thêm vào giỏ hàng</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1825,7 +1843,7 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="product-wrapper" data-aos="fade-up">
                                     <div class="product-img">
-                                        <img src="assets/images/homepage-one/product-img/p-img-11.webp"
+                                        <img src="assets/images/thao-moc/Trà Thảo mộc đường đen.png"
                                             alt="product-img">
                                         <div class="product-cart-items">
                                             <a href="#" class="cart cart-item">
@@ -1918,11 +1936,11 @@
                                             </span>
                                         </div>
                                         <div class="product-description">
-                                            <a href="product-info.html" class="product-details">Fresh Red Tomatos
+                                            <a href="product-info.html" class="product-details" title="Trà Thảo mộc đường đen 130g">Trà Thảo mộc đường đen 130g
                                             </a>
                                             <div class="price">
-                                                <span class="price-cut">$12.99</span>
-                                                <span class="new-price">$6.99</span>
+                                                <span class="price-cut">176.000₫</span>
+                                                <span class="new-price">159.000₫</span>
                                             </div>
                                         </div>
                                         <div class="product-cart-btn">
@@ -1935,7 +1953,7 @@
                                                         </path>
                                                     </svg>
                                                 </span>
-                                                <span class="btn-text">Add To Cart</span>
+                                                <span class="btn-text">Thêm vào giỏ hàng</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1944,7 +1962,7 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="product-wrapper" data-aos="fade-up">
                                     <div class="product-img">
-                                        <img src="assets/images/homepage-one/product-img/p-img-12.webp"
+                                        <img src="assets/images/hoa/Trà hoa đậu biếc mix.png"
                                             alt="product-img">
                                         <div class="product-cart-items">
                                             <a href="#" class="cart cart-item">
@@ -2037,11 +2055,11 @@
                                             </span>
                                         </div>
                                         <div class="product-description">
-                                            <a href="product-info.html" class="product-details">Fresh Red Tomatos
+                                            <a href="product-info.html" class="product-details" title="Trà Hoa đậu biếc mix cỏ ngọt">Trà Hoa đậu biếc mix cỏ ngọt
                                             </a>
                                             <div class="price">
-                                                <span class="price-cut">$12.99</span>
-                                                <span class="new-price">$6.99</span>
+                                                <span class="price-cut">246.000₫</span>
+                                                <span class="new-price">200.000₫</span>
                                             </div>
                                         </div>
                                         <div class="product-cart-btn">
@@ -2054,7 +2072,7 @@
                                                         </path>
                                                     </svg>
                                                 </span>
-                                                <span class="btn-text">Add To Cart</span>
+                                                <span class="btn-text">Thêm vào giỏ hàng</span>
                                             </a>
                                         </div>
                                     </div>
@@ -2067,6 +2085,7 @@
         </div>
     </section>
     <!--------------- products-sidebar-section-end--------------->
+
 
   <!--------------- footer-section--------------->
     <section class="product footer">
@@ -2254,7 +2273,7 @@
     <script src="assets/js/swiper10-bundle.min.js"></script>
 
     <!--------------- additional-js ---------------->
-    <script src="assets/js/ecoshop.js"></script>
+    <script src="assets/js/teabliss.js"></script>
 
     <script>
     const backToTopButton = document.getElementById("backToTop");
