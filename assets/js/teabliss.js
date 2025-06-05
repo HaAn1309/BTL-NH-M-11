@@ -207,56 +207,117 @@ if (coverFile) {
   };
 }
 
-// countdown----------
-function CountDown(lastDate) {
+// countdown.js - Phiên bản cải tiến
+function CountDown(endDate, options = {}) {
+  // Các phần tử DOM
   const selectDay = document.getElementById("day");
   const selectHour = document.getElementById("hour");
   const selectMinute = document.getElementById("minute");
-  const selectSecound = document.getElementById("second");
-  if (selectDay && selectHour && selectMinute && selectSecound) {
-    let showDate = "";
-    let showHour = "";
-    let showMinute = "";
-    let showSecound = "";
-    // count Down
-    const provideDate = new Date(lastDate);
-    // format date
-    const year = provideDate.getFullYear();
-    const month = provideDate.getMonth();
-    const date = provideDate.getDate();
-    const hours = provideDate.getHours();
-    const minutes = provideDate.getMinutes();
-    const seconds = provideDate.getSeconds();
+  const selectSecond = document.getElementById("second");
+  
+  // Kiểm tra phần tử DOM tồn tại
+  if (!selectDay || !selectHour || !selectMinute || !selectSecond) return;
 
-    // date calculation logic
-    const _seconds = 1000;
-    const _minutes = _seconds * 60;
-    const _hours = _minutes * 60;
-    const _date = _hours * 24;
-    const timer = setInterval(() => {
-      const now = new Date();
-      const distance =
-        new Date(year, month, date, hours, minutes, seconds).getTime() -
-        now.getTime();
-      if (distance < 0) {
-        clearInterval(timer);
-        return;
-      }
-      showDate = Math.floor(distance / _date);
-      showMinute = Math.floor((distance % _hours) / _minutes);
-      showHour = Math.floor((distance % _date) / _hours);
-      showSecound = Math.floor((distance % _minutes) / _seconds);
-      selectDay.innerText = showDate < 10 ? `0${showDate}` : showDate;
-      selectHour.innerText = showHour < 10 ? `0${showHour}` : showHour;
-      selectMinute.innerText = showMinute < 10 ? `0${showMinute}` : showMinute;
-      selectSecound.innerText =
-        showSecound < 10 ? `0${showSecound}` : showSecound;
-    }, 1000);
-  }
+  // Cấu hình mặc định
+  const defaults = {
+    expiredText: 'Flash Sale đã kết thúc!',
+    onExpired: null,
+    onTick: null,
+    leadingZero: true
+  };
+  
+  const config = {...defaults, ...options};
+
+  // Hàm định dạng số với số 0 đứng đầu
+  const formatNumber = num => config.leadingZero && num < 10 ? `0${num}` : num;
+
+  // Hàm cập nhật giao diện
+  const updateDisplay = (days, hours, minutes, seconds) => {
+    selectDay.textContent = formatNumber(days);
+    selectHour.textContent = formatNumber(hours);
+    selectMinute.textContent = formatNumber(minutes);
+    selectSecond.textContent = formatNumber(seconds);
+    
+    // Thêm hiệu ứng khi số thay đổi
+    [selectDay, selectHour, selectMinute, selectSecond].forEach(el => {
+      el.classList.add('tick');
+      setTimeout(() => el.classList.remove('tick'), 500);
+    });
+  };
+
+  // Hàm xử lý khi hết giờ
+  const handleExpired = () => {
+    const flashSaleContent = document.querySelector('.flash-sale-content');
+    if (flashSaleContent) {
+      flashSaleContent.innerHTML = `
+        <h2 class="wrapper-heading">Flash Sale đã kết thúc</h2>
+        <p class="wrapper-details">Hãy theo dõi để không bỏ lỡ chương trình tiếp theo!</p>
+      `;
+    }
+    
+    if (typeof config.onExpired === 'function') {
+      config.onExpired();
+    }
+  };
+
+  // Tính toán thời gian
+  const calculateTime = () => {
+    const now = new Date();
+    const targetDate = new Date(endDate);
+    const distance = targetDate - now;
+
+    if (distance <= 0) {
+      clearInterval(timer);
+      handleExpired();
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    updateDisplay(days, hours, minutes, seconds);
+    
+    if (typeof config.onTick === 'function') {
+      config.onTick({days, hours, minutes, seconds, distance});
+    }
+  };
+
+  // Khởi chạy ngay lập tức để tránh delay ban đầu
+  calculateTime();
+  
+  // Cập nhật mỗi giây
+  const timer = setInterval(calculateTime, 1000);
+
+  // Trả về hàm clear để có thể dừng khi cần
+  return () => clearInterval(timer);
 }
-// 2023-08-28T10:41:43.000000Z
 
-CountDown("2024-12-28T10:41:43.000000Z");
+// Khởi tạo bộ đếm ngược với ngày kết thúc
+// Thời gian mặc định là 24 giờ từ thời điểm hiện tại
+const defaultEndDate = new Date();
+defaultEndDate.setDate(defaultEndDate.getDate() + 1); // 1 ngày sau
+
+const clearCountdown = CountDown(defaultEndDate.toISOString(), {
+  onExpired: () => {
+    console.log('Flash Sale đã kết thúc!');
+    // Có thể thêm các hành động khác khi hết giờ
+  },
+  onTick: (time) => {
+    // console.log('Time remaining:', time);
+    // Có thể thêm hiệu ứng khi thời gian sắp hết
+    if (time.hours === 0 && time.minutes < 30) {
+      document.querySelector('.countdown-section').classList.add('urgent');
+    }
+  }
+});
+
+// Nếu cần dừng bộ đếm ngược (ví dụ khi chuyển trang)
+// clearCountdown();
+const endDate = new Date();
+endDate.setDate(endDate.getDate() + 1); // 3 ngày sau
+CountDown(endDate.toISOString());
 
 // product-cart-increment-decrement
 const productInfo = document.querySelector(".product-info");
