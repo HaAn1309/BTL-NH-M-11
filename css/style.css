@@ -264,6 +264,11 @@ button {
 }
 .product-wrapper .product-cart-btn .product-btn .btn-text {
   font-weight: 600;
+  display: inline-block;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .product-wrapper:hover {
   border: 1px solid #54a668;
