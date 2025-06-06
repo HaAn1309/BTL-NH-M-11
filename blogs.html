@@ -391,6 +391,18 @@
     </header>
     <!--------------- header-section-end --------------->
 
+      <!--NÚT HỖ TRỢ-->
+    <div class="cro-buttons">
+    <a href="mailto:TeaBliss@gmail.com" class="cro-button email-btn">
+        <img src="assets/images/homepage-one/communication.png" alt="Email Icon">
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61568651612964" target="_blank" class="cro-button message-btn">
+        <img src="assets/images/homepage-one/messenger.png" alt="Message Icon">
+    </a>
+</div>
+
+    <button id="backToTop" class="back-to-top">↑</button>
+
     <!--------------- blog-tittle-section---------------->
     <section class="blog about-blog">
         <div class="container">
@@ -410,7 +422,7 @@
 
     <!--------------- blog-news-section---------------->
     <div class="section-header text-center">
-  <h2 class="blog-title">📰 Tin tức mới nhất</h2>
+  <h2 class="blog-title">Tin tức mới nhất</h2>
   <p class="blog-subtitle">Cập nhật những thông tin mới nhất về trà, sức khỏe và phong cách sống mỗi ngày.</p>
 </div>
     <section class="latest product footer-padding">
@@ -449,7 +461,7 @@
                                             </svg>
                                         </span>
                                         <span class="text">
-                                            Comments
+                                            Bình luận
                                         </span>
                                     </div>
                                 </div>
@@ -458,7 +470,7 @@
                                 <div class="divider"></div>
 
                                 <a href="#" class="shop-btn">
-                                    Learn More
+                                    Tìm hiểu thêm
                                     <span>
                                         <svg width="16" height="11" viewBox="0 0 16 11" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -502,7 +514,7 @@
                                             </svg>
                                         </span>
                                         <span class="text">
-                                            Comments
+                                            Bình luận
                                         </span>
                                     </div>
                                 </div>
@@ -511,7 +523,7 @@
                                 <div class="divider"></div>
 
                                 <a href="blogs-details2.html" class="shop-btn">
-                                    Learn More
+                                    Tìm hiểu thêm
                                     <span>
                                         <svg width="16" height="11" viewBox="0 0 16 11" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -555,7 +567,7 @@
                                             </svg>
                                         </span>
                                         <span class="text">
-                                            Comments
+                                            Bình luận
                                         </span>
                                     </div>
                                 </div>
@@ -564,7 +576,7 @@
                                 <div class="divider"></div>
 
                                 <a href="blogs-details2.html" class="shop-btn">
-                                    Learn More
+                                    Tìm hiểu thêm
                                     <span>
                                         <svg width="16" height="11" viewBox="0 0 16 11" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -607,7 +619,7 @@
                                             </svg>
                                         </span>
                                         <span class="text">
-                                            Comments
+                                            Bình luận
                                         </span>
                                     </div>
                                 </div>
@@ -616,7 +628,7 @@
                                 <div class="divider"></div>
 
                                 <a href="blogs-details2.html" class="shop-btn">
-                                    Learn More
+                                    Tìm hiểu thêm
                                     <span>
                                         <svg width="16" height="11" viewBox="0 0 16 11" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -659,7 +671,7 @@
                                             </svg>
                                         </span>
                                         <span class="text">
-                                            Comments
+                                            Bình luận
                                         </span>
                                     </div>
                                 </div>
@@ -668,7 +680,7 @@
                                 <div class="divider"></div>
 
                                 <a href="blogs-details2.html" class="shop-btn">
-                                    Learn More
+                                    Tìm hiểu thêm
                                     <span>
                                         <svg width="16" height="11" viewBox="0 0 16 11" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -712,7 +724,7 @@
                                             </svg>
                                         </span>
                                         <span class="text">
-                                            Comments
+                                            Bình luận
                                         </span>
                                     </div>
                                 </div>
@@ -720,7 +732,7 @@
                                 </a>
                                 <div class="divider"></div>
                                 <a href="#" class="shop-btn">
-                                    Learn More
+                                    Tìm hiểu thêm
                                     <span>
                                         <svg width="16" height="11" viewBox="0 0 16 11" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -908,13 +920,6 @@
     </section>
     <!--------------- footer-section-end--------------->
 
-
-
-
-
-
-
-
     <!--------------- jQuery ---------------->
     <script src="assets/js/jquery_3.7.1.min.js"></script>
 
@@ -933,7 +938,21 @@
     <!--------------- additional-js ---------------->
     <script src="assets/js/teabliss.js"></script>
 
+<script>
+    const backToTopButton = document.getElementById("backToTop");
 
+    window.onscroll = () => {
+        if (window.scrollY > 200) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    };
+
+    backToTopButton.onclick = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+    </script>
 </body>
 
 
