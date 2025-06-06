@@ -5917,6 +5917,17 @@ table .ticket-row:hover {
   color: #444;
   margin-bottom: 0px;
 }
+.popup-content .shop-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #54a668;
+  color: #fff;
+  font-size: 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 20px auto 0 auto; /* Cách lề hai bên và trên */
+  transition: background-color 0.3s ease;
+}
 
 .popup-content .popup-image {
   width: 100%;
