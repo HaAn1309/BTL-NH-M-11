@@ -1682,7 +1682,7 @@ button {
 
 .flash-sale-section .flash-sale-content .wrapper-heading {
      margin: 0 auto 3rem; /* Căn giữa và margin dưới 3rem */
-    font-size: 3rem; /* Làm nổi bật tiêu đề */
+    font-size: 3.5rem; /* Làm nổi bật tiêu đề */
     color: #2c3e50;
     font-weight: bold;
     text-align: center;
@@ -1690,9 +1690,9 @@ button {
 
 .flash-sale-section .flash-sale-content .wrapper-details {
     color: #1d1d1d;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 .flash-sale-content {
     display: flex;
