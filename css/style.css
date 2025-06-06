@@ -4299,6 +4299,10 @@ table .ticket-row:hover {
   }
   .contact-section .login-section .login-img {
     text-align: center;
+   border: 2px solid #e0f7fa; /* Màu xanh nhạt */ 
+   border-radius: 15px; /* Bo tròn nhẹ */ 
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Bóng đổ nhẹ */  
+
   }
 }
 @media (max-width:767px) {
