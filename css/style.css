@@ -5967,3 +5967,35 @@ table .ticket-row:hover {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.section-header {
+  margin: 60px auto 40px;
+  text-align: center;
+}
+
+.blog-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #3A1F0B;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.blog-title::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background-color: #A67B5B;
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.blog-subtitle {
+  font-size: 16px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
