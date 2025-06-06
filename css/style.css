@@ -264,6 +264,11 @@ button {
 }
 .product-wrapper .product-cart-btn .product-btn .btn-text {
   font-weight: 600;
+  display: inline-block;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .product-wrapper:hover {
   border: 1px solid #54a668;
@@ -3742,6 +3747,9 @@ table .ticket-row:hover {
   }
   .login-section .login-img {
     text-align: center;
+   border: 2px solid #e0f7fa; /* Màu xanh nhạt */ 
+   border-radius: 15px; /* Bo tròn nhẹ */ 
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Bóng đổ nhẹ */  
   }
 }
 .checkbox {
@@ -4291,6 +4299,10 @@ table .ticket-row:hover {
   }
   .contact-section .login-section .login-img {
     text-align: center;
+   border: 2px solid #e0f7fa; /* Màu xanh nhạt */ 
+   border-radius: 15px; /* Bo tròn nhẹ */ 
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Bóng đổ nhẹ */  
+
   }
 }
 @media (max-width:767px) {
