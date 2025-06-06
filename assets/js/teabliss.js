@@ -341,8 +341,7 @@ function loadCart() {
         }
     }
 }
-
-// Load cart data on cart page
+ // Load cart data on cart page
 if (window.location.pathname.endsWith('cart.html')) {
     loadCart();
 }
