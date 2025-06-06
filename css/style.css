@@ -191,7 +191,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 0px;
-  height: 21rem;
+  height: 23rem;
   padding-top: 3.2rem;
   margin-bottom: 3.5rem;
   position: relative;
@@ -248,7 +248,7 @@ button {
 }
 .product-wrapper .product-details {
   font-family: "League Spartan", sans-serif;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
 }
 .product-wrapper .product-cart-btn {
   transition: all 0.4s;
