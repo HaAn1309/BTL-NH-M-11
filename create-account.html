@@ -453,7 +453,7 @@
                                 </div>
                             </div>
                             <div class="login-btn text-center">
-                                <a href="#" class="shop-btn">Tạo tài khoản</a>
+                                <a href="#" class="shop-btn" id="create-account">Tạo tài khoản</a>
                                 <span class="shop-account">Bạn đã có tài khoản ?<a href="login.html">Đăng nhập</a></span>
                             </div>
                         </div>
@@ -670,6 +670,10 @@
 
     backToTopButton.onclick = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+    const goToLogin = document.getElementById("create-account");
+    goToLogin.onclick = () => {
+        window.location.href = "login.html";
     };
     </script>
 </body>

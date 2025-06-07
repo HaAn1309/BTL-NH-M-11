@@ -5422,7 +5422,7 @@ table .ticket-row:hover {
 .nav-account {
   position: relative;
 }
-.nav-account .dropdown-account {
+.nav-account .header-user {
   pointer-events: none;
   position: absolute;
   background-color: var(--white);
@@ -5430,7 +5430,7 @@ table .ticket-row:hover {
   z-index: 999;
   visibility: hidden;
   text-align: left;
-  top: calc(100% + 28px);
+  top: calc(100% + 40px);
   opacity: 0;
   visibility: hidden;
   border-radius: 8px;
@@ -5543,7 +5543,7 @@ table .ticket-row:hover {
 
 /* === Dropdown Tài khoản === */
 .header-user .dropdown-account {
-  top: 120%;
+  top: 100%;
   right: 0;
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
