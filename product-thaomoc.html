@@ -494,9 +494,45 @@
                                     <div class="result">
                                         <p style="font-weight: bold; font-size: 2.2rem;">TRÀ THẢO MỘC</p>
                                     </div>
-                              
+                                <div class="product-sorting">
+                                        <span class="product-sort">Sắp xếp:</span>
+                                        <div id="allitem">
+                                            <div class="product-list" onclick="selectBoxHandler('allitem')">
+                                                <span class="default item-text">Mặc định</span>
+                                                <span>
+                                                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1 1L5 5L9 1" stroke="#9A9A9A" />
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            <div class="slectbox-body" style="display: none;">
+                                                <div class="clickAway position-fixed"
+                                                    onclick="selectBoxHandler('allitem')"></div>
+                                                <ul class="country-options">
+                                                   <li class="all-option" data-sort="default"><span 
+                                                            class="option-text item-text">Mặc định</span>
+                                                    </li>
+                                                    <li class="all-option" data-sort="a-z"><span
+                                                            class="option-text item-text">Tên từ A-Z</span>
+                                                    </li>
+                                                    <li class="all-option" data-sort="z-a"><span
+                                                            class="option-text item-text">Tên từ Z-A</span>
+                                                    </li>
+                                                    <li class="all-option" data-sort="price-low-high"><span
+                                                            class="option-text item-text">Giá từ thấp tới cao</span>
+                                                    </li>
+                                                    <li class="all-option" data-sort="price-high-low"><span
+                                                            class="option-text item-text">Giá từ cao tới thấp</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
                                 </div>
                             </div>
+                        <div id="product-container" class="row">
                             <div class="col-xl-4 col-sm-6">
                                 <div class="product-wrapper" data-aos="fade-up">
                                     <div class="product-img">
@@ -1733,6 +1769,7 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>

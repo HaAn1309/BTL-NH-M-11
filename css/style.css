@@ -184,6 +184,8 @@ button {
   transition: all 0.2s;
   border: 1px solid #ffffff;
   overflow: hidden;
+  margin-right: 20px;
+  margin-bottom: 30px;
 }
 .product-wrapper .product-img {
   display: flex;

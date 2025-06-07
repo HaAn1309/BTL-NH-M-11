@@ -433,12 +433,12 @@
                                         <div class="review-form-name">
                                             <label for="fname" class="form-label">Họ</label>
                                             <input type="text" id="fname" class="form-control"
-                                            placeholder="Lê" >
+                                            placeholder="Họ" >
                                         </div>
                                         <div class="review-form-name">
                                             <label for="lname" class="form-label">Tên</label>
                                             <input type="text" id="lname" class="form-control"
-                                            placeholder="Yến">
+                                            placeholder="Tên">
                                         </div>
                                     </div>
                                     <div class=" account-inner-form">
@@ -461,7 +461,7 @@
                                     <div class="review-form-name address-form">
                                         <label for="address" class="form-label">Địa chỉ</label>
                                         <input type="text" id="address" class="form-control"
-                                          placeholder="12 Chùa Bộc" >
+                                          placeholder="Địa chỉ" >
                                     </div>
                                     <div class=" account-inner-form city-inner-form">
                                         <div class="review-form-name">
@@ -503,8 +503,8 @@
                                     </div>
                                     <hr>
                                     <div class="subtotal product-total">
-                                        <ul class="product-list">
-                                            <li>
+                                        <ul class="product-list" id="checkout-products">
+                                            <!-- <li>
                                                 <div class="product-info">
                                                     <h5 class="wrapper-heading">Apple Watch X1</h5>
                                                     <p class="paragraph">64GB, Black, 44mm, Chain Belt</p>
@@ -530,24 +530,26 @@
                                                 <div class="price">
                                                     <h5 class="wrapper-heading">$279</h5>
                                                 </div>
-                                            </li>
+                                            </li> -->
                                         </ul>
                                     </div>
                                     <hr>
                                     <div class="subtotal product-total">
                                         <h5 class="wrapper-heading">TỔNG CỘNG</h5>
-                                        <h5 class="wrapper-heading">$365</h5>
+                                        <div class="price">
+                                            <h5 class="wrapper-heading price" id="checkout-total">0 VND</h5>
+                                        </div>
                                     </div>
                                     <div class="subtotal product-total">
                                         <ul class="product-list">
                                             <li>
                                                 <div class="product-info">
-                                                    <p class="paragraph">VẬN CHUYỂN/p>
-                                                    <h5 class="wrapper-heading">Miễn phí vận chuyển</h5>
+                                                    <p class="paragraph">Miễn phí vận chuyển<p></p>
+                                                    <h5 class="wrapper-heading">VẬN CHUYỂN</h5>
 
                                                 </div>
                                                 <div class="price">
-                                                    <h5 class="wrapper-heading">+$0</h5>
+                                                    <h5 class="wrapper-heading">+0 VND</h5>
                                                 </div>
                                             </li>
                                         </ul>
@@ -555,7 +557,9 @@
                                     <hr>
                                     <div class="subtotal total">
                                         <h5 class="wrapper-heading">TỔNG CỘNG</h5>
-                                        <h5 class="wrapper-heading price">$365</h5>
+                                        <div class="price">
+                                            <h5 class="wrapper-heading price" id="checkout-grand-total">0 VND</h5>
+                                        </div>
                                     </div>
                                     <div class="subtotal payment-type">
                                         <div class="checkbox-item">
@@ -794,5 +798,51 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
     </script>
+    <script>
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const productList = document.getElementById("checkout-products");
+        const totalElement = document.getElementById("checkout-total");
+        const grandTotalElement = document.getElementById("checkout-grand-total");
+
+        function renderCheckout() {
+        if (cart.length === 0) {
+            productList.innerHTML = `
+            <li>
+                <div class="product-info">
+                <h5 class="wrapper-heading">Không có sản phẩm trong đơn hàng.</h5>
+                </div>
+            </li>
+            `;
+            totalElement.innerText = "0 VND";
+            return;
+        }
+
+        let total = 0;
+        let html = "";
+
+        cart.forEach(item => {
+            const lineTotal = item.price * item.quantity;
+            total += lineTotal;
+
+            html += `
+            <li>
+                <div class="product-info">
+                <h5 class="wrapper-heading">${item.name} x${item.quantity}</h5>
+                </div>
+                <div class="price">
+                <h5 class="wrapper-heading">${lineTotal.toLocaleString()} VND</h5>
+                </div>
+            </li>
+            `;
+        });
+
+        productList.innerHTML = html;
+        totalElement.innerText = total.toLocaleString() + " VND";
+        grandTotalElement.innerText = total.toLocaleString() + " VND";
+        }
+
+        renderCheckout();
+    </script>
+
 </body>
 </html>
