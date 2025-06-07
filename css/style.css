@@ -1042,7 +1042,7 @@ button {
   align-items: flex-start;
   justify-content: center;
   gap: 1.5rem;
-  width: 220px;
+  width: 280px;
   position: absolute;
 }
 .header-nav .header-nav-menu .menu-list .header-sub-menu,
@@ -6051,13 +6051,13 @@ table .ticket-row:hover {
 }
 
 .blog-subtitle {
-  font-size: 16px;
+  font-size: 22px;
   color: #666;
   max-width: 600px;
   margin: 0 auto;
 }
 .blog-title {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 700;
     color: #2e4e1e;
     margin-top: 30px;
@@ -6065,4 +6065,5 @@ table .ticket-row:hover {
     text-align: center;
     line-height: 1.4;
 }
+
 
