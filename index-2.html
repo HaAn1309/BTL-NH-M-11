@@ -423,7 +423,7 @@
     <!-- dcsimon -->
     <div id="login-popup" class="popup-overlay">
         <div class="popup-content">
-            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <span class="close-popup" onclick="closePopupLogin()">&times;</span>
             <!-- <img src="assets/images/homepage-one/anhpopup.jpeg" alt="TeaBliss" class="popup-image"> -->
             <h2>Vui lòng đăng nhập</h2>
             <p>Vui lòng đăng nhập để xem nhiều sản phẩm hơn<br> và nhận các ưu đãi.</p>
@@ -2870,6 +2870,7 @@
         }
 
     </script>
+    
 <!-- Toast -->
 <div id="cart-toast" style="
 display: none;
@@ -2922,7 +2923,32 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+    let email =  localStorage.getItem("email");
+    if(email){
+        window.onload = function () {
+            setTimeout(() => {
+            document.getElementById('welcome-popup').style.display = 'flex';
+            }, 1000); // delay 1 giây
+        }
+    }else {
+        window.onload = function () {
+            setTimeout(() => {
+            document.getElementById('login-popup').style.display = 'flex';
+            }, 1000); // delay 1 giây
+        }
+        
+    }
+    const buttonLogout = document.getElementById("logout");
+    buttonLogout.onclick = () => {
+        localStorage.clear();
+    };
 });
+</script>
+<script>
+    function closePopupLogin() {
+        document.getElementById('login-popup').style.display = 'none';
+    }
+
 </script>
 
 
