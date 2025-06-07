@@ -23,6 +23,7 @@
 
     <!--------------- additional-css ---------------->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -160,7 +161,7 @@
                             </a>
                         </div>
                         <div class="header-user">
-                            <a href="user-profile.html" class="account-icon">
+                            <a href="login.html" class="account-icon">
                                 <span>
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -438,7 +439,7 @@
                                     </div>
                                 </div>
                                 <div class="login-btn text-center">
-                                    <a href="#" class="shop-btn">Đăng nhập</a>
+                                    <a href="#" class="shop-btn" id="btnLogin">Đăng nhập</a>
                                     <span class="shop-account">Bạn không có tài khoản ?<a
                                             href="create-account.html">Đăng ký
                                             </a></span>
@@ -658,6 +659,19 @@
     backToTopButton.onclick = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
+    // dcsimon
+    const buttonLogin = document.getElementById("btnLogin");
+    buttonLogin.onclick = () => {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("Password").value; 
+        if (email && password) {
+            localStorage.setItem('email', email);
+            window.location = "index-2.html";
+        } else {
+            alert('Vui lòng nhập thông tin tài khoản');
+        }
+    };
+    // dcsimon
     </script>
 </body>
 </html>
