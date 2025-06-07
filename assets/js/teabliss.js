@@ -393,3 +393,51 @@ function loadCheckout() {
 if (window.location.pathname.endsWith('checkout.html')) {
     loadCheckout();
 }
+// Hàm sắp xếp sản phẩm
+function filterSort() {
+  const originalProducts = $("#product-container .product-wrapper").parent().clone(); // lưu ban đầu
+
+  $(".all-option").on("click", function () {
+    const sortValue = $(this).data("sort");
+    $(".all-option").removeClass("active");
+    $(this).addClass("active");
+    $(".default.item-text").text($(this).find(".text-value-item").text());
+
+    applySort(sortValue);
+  });
+
+  function applySort(sortValue) {
+    let products = $("#product-container .product-wrapper").parent();
+
+    if (sortValue === "best-selling" || sortValue === "default") {
+      $("#product-container").empty().append(originalProducts.clone());
+      return;
+    }
+
+    if (sortValue === "price-low-high") {
+      products.sort((a, b) =>
+        parseFloat($(a).find(".new-price").text().replace(/[^\d]/g, '')) -
+        parseFloat($(b).find(".new-price").text().replace(/[^\d]/g, ''))
+      );
+    } else if (sortValue === "price-high-low") {
+      products.sort((a, b) =>
+        parseFloat($(b).find(".new-price").text().replace(/[^\d]/g, '')) -
+        parseFloat($(a).find(".new-price").text().replace(/[^\d]/g, ''))
+      );
+    } else if (sortValue === "a-z") {
+      products.sort((a, b) =>
+        $(a).find(".product-details").text().trim().localeCompare($(b).find(".product-details").text().trim())
+      );
+    } else if (sortValue === "z-a") {
+      products.sort((a, b) =>
+        $(b).find(".product-details").text().trim().localeCompare($(a).find(".product-details").text().trim())
+      );
+    }
+
+    $("#product-container").empty().append(products);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  filterSort(); // Gọi khi DOM đã sẵn sàng
+});
