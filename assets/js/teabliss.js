@@ -393,4 +393,3 @@ function loadCheckout() {
 if (window.location.pathname.endsWith('checkout.html')) {
     loadCheckout();
 }
-
