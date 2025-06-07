@@ -5724,7 +5724,7 @@ table .ticket-row:hover {
 }
 
 .blog-section .product-wrapper .product-img {
-  height: 10rem; /* Giảm chiều cao nếu cần */
+  height: 15rem; /* Giảm chiều cao nếu cần */
   border-radius: 1rem;
   overflow: hidden;
   text-align: center; /* Căn giữa ảnh */
