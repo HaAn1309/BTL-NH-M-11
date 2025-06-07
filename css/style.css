@@ -191,7 +191,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 0px;
-  height: 21rem;
+  height: 23rem;
   padding-top: 3.2rem;
   margin-bottom: 3.5rem;
   position: relative;
@@ -248,7 +248,7 @@ button {
 }
 .product-wrapper .product-details {
   font-family: "League Spartan", sans-serif;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
 }
 .product-wrapper .product-cart-btn {
   transition: all 0.4s;
@@ -264,6 +264,11 @@ button {
 }
 .product-wrapper .product-cart-btn .product-btn .btn-text {
   font-weight: 600;
+  display: inline-block;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .product-wrapper:hover {
   border: 1px solid #54a668;
@@ -1682,7 +1687,7 @@ button {
 
 .flash-sale-section .flash-sale-content .wrapper-heading {
      margin: 0 auto 3rem; /* Căn giữa và margin dưới 3rem */
-    font-size: 3rem; /* Làm nổi bật tiêu đề */
+    font-size: 3.5rem; /* Làm nổi bật tiêu đề */
     color: #2c3e50;
     font-weight: bold;
     text-align: center;
@@ -1690,9 +1695,9 @@ button {
 
 .flash-sale-section .flash-sale-content .wrapper-details {
     color: #1d1d1d;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 .flash-sale-content {
     display: flex;
@@ -3742,6 +3747,9 @@ table .ticket-row:hover {
   }
   .login-section .login-img {
     text-align: center;
+   border: 2px solid #e0f7fa; /* Màu xanh nhạt */ 
+   border-radius: 15px; /* Bo tròn nhẹ */ 
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Bóng đổ nhẹ */  
   }
 }
 .checkbox {
@@ -4291,6 +4299,10 @@ table .ticket-row:hover {
   }
   .contact-section .login-section .login-img {
     text-align: center;
+   border: 2px solid #e0f7fa; /* Màu xanh nhạt */ 
+   border-radius: 15px; /* Bo tròn nhẹ */ 
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Bóng đổ nhẹ */  
+
   }
 }
 @media (max-width:767px) {
@@ -5916,6 +5928,17 @@ table .ticket-row:hover {
   font-size: 1.8rem;
   color: #444;
   margin-bottom: 0px;
+}
+.popup-content .shop-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #54a668;
+  color: #fff;
+  font-size: 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 20px auto 0 auto; /* Cách lề hai bên và trên */
+  transition: background-color 0.3s ease;
 }
 
 .popup-content .popup-image {
