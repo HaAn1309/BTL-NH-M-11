@@ -492,46 +492,11 @@ button {
   color: #7aae88;
   font-weight: 700;
 }
-/* Khi màn hình nhỏ hơn 767px */
 @media (max-width: 767px) {
   .header-top {
-    display: flex; /* Giữ nguyên hiển thị */
-    flex-direction: column; /* Xếp chồng các phần tử */
-    align-items: center; /* Căn giữa các phần tử */
-    padding: 1rem; /* Thêm khoảng cách để tạo sự thoáng đãng */
-    font-size: 0.9rem; /* Giảm kích thước font */
-    gap: 0.5rem; /* Tạo khoảng cách giữa các mục */
-  }
-
-  .header-top a {
-    display: inline-block;
-    margin: 0.5rem 0; /* Tạo khoảng cách giữa các liên kết */
-  }
-
-  .header-center {
-    flex-direction: column; /* Sắp xếp các phần tử trong header-center theo chiều dọc */
-    align-items: center;
-    gap: 1rem; /* Tạo khoảng cách giữa các phần tử */
-    text-align: center; /* Căn giữa văn bản */
-  }
-
-  .header-center .logo img {
-    max-width: 80%; /* Giảm kích thước logo trên màn hình nhỏ */
-  }
-
-  .header-nav {
-    flex-direction: column; /* Chuyển menu sang dạng dọc */
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .header-cart-items {
-    flex-direction: row; /* Để nút giỏ hàng hiển thị theo hàng ngang */
-    justify-content: center;
-    gap: 1rem;
+    display: flex; /* kh Ẩn header-top */
   }
 }
-
 @media (max-width:1023px) {
   .header-top {
     padding: 1rem;
