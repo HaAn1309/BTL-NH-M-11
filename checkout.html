@@ -485,7 +485,7 @@
                                         <div class="checkbox-item">
                                             <input type="checkbox" id="remember">
                                             <label for="remember" class="form-label">
-                                                Bạn cần hỗ trợ?</label>
+                                                Tạo tài khoản?</label>
                                         </div>
                                     </div>
                                 </div>
@@ -544,8 +544,8 @@
                                         <ul class="product-list">
                                             <li>
                                                 <div class="product-info">
-                                                    <p class="paragraph">Miễn phí vận chuyển<p></p>
-                                                    <h5 class="wrapper-heading">VẬN CHUYỂN</h5>
+                                                    <p class="paragraph">VẬN CHUYỂN/p>
+                                                    <h5 class="wrapper-heading">Miễn phí vận chuyển</h5>
 
                                                 </div>
                                                 <div class="price">
@@ -585,7 +585,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#" class="shop-btn">Đặt hàng ngay</a>
+                                    <button class="shop-btn" id="order-button">Đặt hàng ngay</button>
                                 </div>
                             </div>
                         </div>
@@ -843,6 +843,30 @@
 
         renderCheckout();
     </script>
+    <!-- Toast message -->
+    <div id="order-toast" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: #27ae60; color: white; padding: 16px 24px; border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 9999; font-size: 18px;">
+    🎉 Đặt hàng thành công!
+    </div>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const btn = document.querySelector('#order-button');
+        const toast = document.getElementById('order-toast');
+
+        if (btn && toast) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            toast.style.display = 'block';
+            setTimeout(() => {
+            toast.style.display = 'none';
+            }, 3000);
+        });
+        }
+    });
+    </script>
+
 
 </body>
-</html>
