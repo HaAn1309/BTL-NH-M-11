@@ -5915,6 +5915,7 @@ table .ticket-row:hover {
     border: none;
     cursor: pointer;
     transition: opacity 0.3s ease-in-out;
+    z-index: 9999; /* Đặt z-index cao để nút không bị che khuất */
 }
 
 .back-to-top:hover {
