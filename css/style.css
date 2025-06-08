@@ -3630,6 +3630,30 @@ table .ticket-row:hover {
 .checkout-wrapper .shop-btn::after {
   display: none;
 }
+
+.checkout .product-list {
+  padding: 0;
+  margin: 0;
+}
+
+.checkout .product-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(52, 168, 83, 0.06);
+  font-size: 1.6rem;
+}
+
+.checkout .product-list li .product-info {
+  flex: 1;
+}
+
+.checkout .product-list li .price {
+  font-weight: 600;
+  color: #1d1d1d;
+  font-size: 1.6rem;
+}
+
 .billing-section {
   background: transparent;
   padding: 2rem;
