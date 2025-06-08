@@ -685,44 +685,6 @@
                             <div class="product-availability">
                                 <span>Có sẵn</span>
                             </div>
-                         <!--  <div class="product-size">
-                                <P class="size-title">Weight</P>
-                                <div class="size-section">
-                                    <span class="size-text">Select Weight</span>
-                                    <div class="toggle-btn">
-                                        <span class="toggle-btn2"></span>
-                                        <span class="chevron">
-                                            <svg width="11" height="7" viewBox="0 0 11 7" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.4 6.8L0 1.4L1.4 0L5.4 4L9.4 0L10.8 1.4L5.4 6.8Z"
-                                                    fill="#222222" />
-                                            </svg>
-                                        </span>
-                                    </div>
-                                </div>
-                                <ul class="size-option">
-                                    <li class="option">
-                                        <span class="option-text">500 gram</span>
-                                        <span class="option-measure">$5.00</span>
-                                    </li>
-                                    <li class="option">
-                                        <span class="option-text">1 Kg</span>
-                                        <span class="option-measure">$9.00</span>
-                                    </li>
-                                    <li class="option">
-                                        <span class="option-text">2 Kg</span>
-                                        <span class="option-measure">$18.00</span>
-                                    </li>
-                                    <li class="option">
-                                        <span class="option-text">3 Kg</span>
-                                        <span class="option-measure">$29.00</span>
-                                    </li>
-                                    <li class="option">
-                                        <span class="option-text">5 Kg</span>
-                                        <span class="option-measure">$35.00</span>
-                                    </li>
-                                </ul>
-                            </div> -->
                             <div class="product-quantity">
                                 <div class="quantity-wrapper">
                                     <div class="quantity">
@@ -972,7 +934,7 @@
     </section>
     <!--------------- products-details-end--------------->
 
-    <!--------------- weekly-section--------------->
+<!--------------- weekly-section--------------->
     <section class="product weekly-sale product-weekly footer-padding">
         <div class="container">
             <div class="section-title">
@@ -1018,7 +980,10 @@
                                             </svg>
                                         </span>
                                     </a>
-                                    <a href="wishlist.html" class="favourite cart-item">
+                                    <a href="wishlist.html" class="favourite cart-item" 
+                                        name="Trà Hoa nhài mix ngũ vị"
+                                        price="169000"
+                                        img="assets/images/thao-moc/Trà hoa nhài mix ngũ vị.png">
                                         <span>
                                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1135,7 +1100,10 @@
                                             </svg>
                                         </span>
                                     </a>
-                                    <a href="wishlist.html" class="favourite cart-item">
+                                    <a href="wishlist.html" class="favourite cart-item" 
+                                        name="Trà Hoa đậu biếc mix cỏ ngọt"
+                                        price="200000"
+                                        img="assets/images/hoa/Trà hoa đậu biếc mix.png">
                                         <span>
                                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1253,7 +1221,10 @@
                                             </svg>
                                         </span>
                                     </a>
-                                    <a href="wishlist.html" class="favourite cart-item">
+                                    <a href="wishlist.html" class="favourite cart-item" 
+                                        name="Trà Shan tuyết"
+                                        price="180000"
+                                        img="assets/images/nguyen-vi/trà shan tuyết.png">
                                         <span>
                                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1371,7 +1342,10 @@
                                             </svg>
                                         </span>
                                     </a>
-                                    <a href="wishlist.html" class="favourite cart-item">
+                                    <a href="wishlist.html" class="favourite cart-item" 
+                                        name="Trà Hoa oải hương"
+                                        price="110000"
+                                        img="assets/images/hoa/Hoa oải hương.png">
                                         <span>
                                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1799,6 +1773,67 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 </script>
+<!--Wishlist add-->
+<div id="wishlist-toast" style="
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #54a668;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 9999;
+  font-size: 18px;
+">
+❤️ Đã thêm vào danh sách yêu thích!
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const toast = document.getElementById("wishlist-toast");
 
+    function showWishlistToast(message) {
+        if (!toast) return;
+        toast.textContent = message;
+        toast.style.display = "block";
+        setTimeout(() => {
+            toast.style.display = "none";
+        }, 3000);
+    }
+
+    document.querySelectorAll('.favourite.cart-item').forEach(icon => {
+        icon.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const wrapper = this.closest('.product-wrapper');
+            if (!wrapper) return;
+
+            const name = wrapper.querySelector('.product-details')?.innerText.trim();
+            const price = wrapper.querySelector('.new-price')?.innerText.replace(/[^\d]/g, '').trim();
+            const img = wrapper.querySelector('.product-img img')?.getAttribute('src');
+
+            if (!name || !price || !img) {
+                alert("⚠️ Không lấy được thông tin sản phẩm!");
+                return;
+            }
+
+            const product = { name, price, img };
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            const exists = wishlist.some(item => item.name === product.name && item.img === product.img);
+
+            if (!exists) {
+                wishlist.push(product);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                showWishlistToast("❤️ Đã thêm vào danh sách yêu thích!");
+            } else {
+                showWishlistToast("⚠️ Sản phẩm đã có trong danh sách yêu thích!");
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>

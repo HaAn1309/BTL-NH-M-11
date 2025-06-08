@@ -971,7 +971,7 @@
                                     <a href="wishlist.html" class="favourite cart-item" 
                                         name="Trà hoa kim ngân"
                                         price="35000"
-                                        img="assets/images/thao-moc/Hắc Kỷ Tử sấy khô.png">
+                                        img="assets/images/hoa/Trà hoa kim ngân.png">
                                         <span>
                                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1029,7 +1029,7 @@
                                     </span>
                                 </div>
                                 <div class="product-description">
-                                    <a href="product-info.html" class="product-details">Trà hoa kim ngân
+                                    <a href="product-info-2.html" class="product-details">Trà hoa kim ngân
                                     </a>
                                     <div class="price">
                                         <span class="price-cut">45.000₫</span>
@@ -1153,7 +1153,7 @@
                                     </span>
                                 </div>
                                 <div class="product-description">
-                                    <a href="product-info.html" class="product-details">Trà Shan Tuyết 100g
+                                    <a href="product-info-6.html" class="product-details">Trà Shan Tuyết 100g
                                     </a>
                                     <div class="price">
                                         <span class="price-cut">200.000₫</span>
@@ -1278,7 +1278,7 @@
                                     </span>
                                 </div>
                                 <div class="product-description">
-                                    <a href="product-info.html" class="product-details">Bộ ấm chén đối ẩm Kintsugi
+                                    <a href="product-info-4.html" class="product-details">Bộ ấm chén đối ẩm Kintsugi
                                     </a>
                                     <div class="price">
                                         <span class="price-cut">450.000₫</span>
@@ -1402,7 +1402,7 @@
                                     </span>
                                 </div>
                                 <div class="product-description">
-                                    <a href="product-info.html" class="product-details">Trà Hoa nhài mix ngũ vị
+                                    <a href="product-info-2.html" class="product-details">Trà Hoa nhài mix ngũ vị
                                     </a>
                                     <div class="price">
                                         <span class="price-cut">260.000₫</span>
@@ -2431,7 +2431,7 @@
                                     </span>
                                 </div>
                                 <div class="product-description">
-                                    <a href="product-info.html" class="product-details">Trà Hoa nhài mix ngũ vị
+                                    <a href="product-info-3.html" class="product-details">Trà Hoa nhài mix ngũ vị
                                     </a>
                                     <div class="price">
                                         <span class="price-cut">260.000₫</span>
@@ -2558,7 +2558,7 @@
                                     </span>
                                 </div>
                                 <div class="product-description">
-                                    <a href="product-info.html" class="product-details">Trà hoa đậu biếc mix ngũ vị</a>
+                                    <a href="product-info-2.html" class="product-details">Trà hoa đậu biếc mix ngũ vị</a>
                                     </a>
                                     <div class="price">
                                         <span class="price-cut">246.000₫</span>
@@ -2682,7 +2682,7 @@
                                     </span>
                                 </div>
                                 <div class="product-description">
-                                    <a href="product-info.html" class="product-details">Trà xanh Matcha 40g
+                                    <a href="product-info-1.html" class="product-details">Trà xanh Matcha 40g
                                     </a>
                                     <div class="price">
                                         <span class="price-cut">169.000₫</span>
@@ -2806,7 +2806,7 @@
                                     </span>
                                 </div>
                                 <div class="product-description">
-                                    <a href="product-info.html" class="product-details">Hũ đựng trà gốm trơn
+                                    <a href="product-info-4.html" class="product-details">Hũ đựng trà gốm trơn
                                     </a>
                                     <div class="price">
                                         <span class="price-cut">166.000₫</span>
@@ -3277,8 +3277,9 @@
     </script>
     
 <!-- Toast -->
-<div id="cart-toast" style="
-display: none;
+<div id="cart-toast" 
+style=
+"display: none;
 position: fixed;
 top: 50%;
 left: 50%;
@@ -3360,7 +3361,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
-<!--Wishlist add-->
+<!--Wishlist add
 <script>
 document.querySelectorAll('.favourite.cart-item').forEach(icon => {
     icon.addEventListener('click', function (e) {
@@ -3395,7 +3396,70 @@ document.querySelectorAll('.favourite.cart-item').forEach(icon => {
         }
     });
 });
+</script> -->
+<!-- Wishlist Toast -->
+<div id="wishlist-toast" style="
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #e91e63;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 9999;
+  font-size: 18px;
+">
+❤️ Đã thêm vào danh sách yêu thích!
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const toast = document.getElementById("wishlist-toast");
+
+    function showWishlistToast(message) {
+        if (!toast) return;
+        toast.textContent = message;
+        toast.style.display = "block";
+        setTimeout(() => {
+            toast.style.display = "none";
+        }, 3000);
+    }
+
+    document.querySelectorAll('.favourite.cart-item').forEach(icon => {
+        icon.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const wrapper = this.closest('.product-wrapper');
+            if (!wrapper) return;
+
+            const name = wrapper.querySelector('.product-details')?.innerText.trim();
+            const price = wrapper.querySelector('.new-price')?.innerText.replace(/[^\d]/g, '').trim();
+            const img = wrapper.querySelector('.product-img img')?.getAttribute('src');
+
+            if (!name || !price || !img) {
+                alert("⚠️ Không lấy được thông tin sản phẩm!");
+                return;
+            }
+
+            const product = { name, price, img };
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            const exists = wishlist.some(item => item.name === product.name && item.img === product.img);
+
+            if (!exists) {
+                wishlist.push(product);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                showWishlistToast("❤️ Đã thêm vào danh sách yêu thích!");
+            } else {
+                showWishlistToast("⚠️ Sản phẩm đã có trong danh sách yêu thích!");
+            }
+        });
+    });
+});
 </script>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {

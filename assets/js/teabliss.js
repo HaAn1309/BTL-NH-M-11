@@ -442,3 +442,29 @@ document.addEventListener("DOMContentLoaded", function () {
   filterSort(); // Gọi khi DOM đã sẵn sàng
 });
 
+// product-cart-increment-decrement
+const productInfo = document.querySelector(".product-info");
+if (productInfo) {
+  const plus = document.querySelector(".plus"),
+    minus = document.querySelector(".minus"),
+    number = document.querySelector(".number");
+
+  if (plus) {
+    let plusAdd = 1;
+    number.innerText = "0" + plusAdd;
+
+    plus.addEventListener("click", () => {
+      plusAdd++;
+      plusAdd = plusAdd < 10 ? "0" + plusAdd : plusAdd;
+      number.innerHTML = plusAdd;
+    });
+
+    minus.addEventListener("click", () => {
+      if (plusAdd > 1) {
+        plusAdd--;
+        plusAdd = plusAdd < 10 ? "0" + plusAdd : plusAdd;
+        number.innerHTML = plusAdd;
+      }
+    });
+  }
+}

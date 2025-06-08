@@ -757,7 +757,10 @@
                                                     </svg>
                                                 </span>
                                             </a>
-                                            <a href="wishlist.html" class="favourite cart-item">
+                                            <a href="wishlist.html" class="favourite cart-item"
+                                            data-name="Bếp điện pha trà kèm điều khiển"
+                                            data-price="300000"
+                                            data-image="assets/images/dung-cu/bếp điện.jpg">
                                                 <span>
                                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -881,7 +884,10 @@
                                                     </svg>
                                                 </span>
                                             </a>
-                                            <a href="wishlist.html" class="favourite cart-item">
+                                            <a href="wishlist.html" class="favourite cart-item"
+                                            data-name="Bộ ấm chén đối ẩm Kintsugi"
+                                            data-price="400000"
+                                            data-image="assets/images/dung-cu/bộ ấm.jpg">
                                                 <span>
                                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1005,7 +1011,10 @@
                                                     </svg>
                                                 </span>
                                             </a>
-                                            <a href="wishlist.html" class="favourite cart-item">
+                                            <a href="wishlist.html" class="favourite cart-item"
+                                            data-name="Chậu rửa chén gốm Nhật"
+                                            data-price="460000"
+                                            data-image="assets/images/dung-cu/chậu rửa.jpg">
                                                 <span>
                                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1127,7 +1136,10 @@
                                                     </svg>
                                                 </span>
                                             </a>
-                                            <a href="wishlist.html" class="favourite cart-item">
+                                            <a href="wishlist.html" class="favourite cart-item"
+                                            data-name="Bộ dụng cụ pha trà gỗ mun kèm ống đựng"
+                                            data-price="140000"
+                                            data-image="assets/images/dung-cu/dụng cụ pha gỗ.jpg">
                                                 <span>
                                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1249,7 +1261,10 @@
                                                     </svg>
                                                 </span>
                                             </a>
-                                            <a href="wishlist.html" class="favourite cart-item">
+                                            <a href="wishlist.html" class="favourite cart-item"
+                                            data-name="Hũ đựng trà gốm trơn"
+                                            data-price="150000"
+                                            data-image="assets/images/dung-cu/hũ đựng trà 1.jpg">
                                                 <span>
                                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1371,7 +1386,10 @@
                                                     </svg>
                                                 </span>
                                             </a>
-                                            <a href="wishlist.html" class="favourite cart-item">
+                                            <a href="wishlist.html" class="favourite cart-item"
+                                            data-name="Khay trà trúc kèm gác chén"
+                                            data-price="790000"
+                                            data-image="assets/images/dung-cu/khay trúc.jpg">
                                                 <span>
                                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1509,7 +1527,10 @@
                                                     </svg>
                                                 </span>
                                             </a>
-                                            <a href="wishlist.html" class="favourite cart-item">
+                                            <a href="wishlist.html" class="favourite cart-item"
+                                            data-name="Bộ ấm chén du lịch vẽ pháp lam hộp da"
+                                            data-price="300000"
+                                            data-image="assets/images/dung-cu/túi đựng.jpg">
                                                 <span>
                                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1944,6 +1965,67 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 </script>
+<!--Wishlist add-->
+<div id="wishlist-toast" style="
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #54a668;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 9999;
+  font-size: 18px;
+">
+❤️ Đã thêm vào danh sách yêu thích!
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const toast = document.getElementById("wishlist-toast");
 
+    function showWishlistToast(message) {
+        if (!toast) return;
+        toast.textContent = message;
+        toast.style.display = "block";
+        setTimeout(() => {
+            toast.style.display = "none";
+        }, 3000);
+    }
+
+    document.querySelectorAll('.favourite.cart-item').forEach(icon => {
+        icon.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const wrapper = this.closest('.product-wrapper');
+            if (!wrapper) return;
+
+            const name = wrapper.querySelector('.product-details')?.innerText.trim();
+            const price = wrapper.querySelector('.new-price')?.innerText.replace(/[^\d]/g, '').trim();
+            const img = wrapper.querySelector('.product-img img')?.getAttribute('src');
+
+            if (!name || !price || !img) {
+                alert("⚠️ Không lấy được thông tin sản phẩm!");
+                return;
+            }
+
+            const product = { name, price, img };
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            const exists = wishlist.some(item => item.name === product.name && item.img === product.img);
+
+            if (!exists) {
+                wishlist.push(product);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                showWishlistToast("❤️ Đã thêm vào danh sách yêu thích!");
+            } else {
+                showWishlistToast("⚠️ Sản phẩm đã có trong danh sách yêu thích!");
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>
