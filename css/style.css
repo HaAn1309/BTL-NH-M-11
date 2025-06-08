@@ -3963,6 +3963,41 @@ table .ticket-row:hover {
   color: #444;
 }
 
+.privacy-section {
+  background: #ffffff;
+  padding: 4rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  margin-top: 3rem;
+}
+
+.privacy-section .policy {
+  margin-bottom: 3rem;
+}
+
+.privacy-section .intro-heading {
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1d1d1d;
+}
+
+.privacy-section .policy-details {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.privacy-section ul {
+  padding-left: 2rem;
+}
+
+.privacy-section li {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: #333;
+}
+
 /*question section*/
 .question-section {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
