@@ -1002,24 +1002,34 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
     </script>
-    <script>
-    // Lấy phần tử form và nút gửi
-    const submitButton = document.getElementById('submitBtn');
-    const contactForm = document.querySelector('form'); // Giả định form nằm trong thẻ <form>
 
-    // Xử lý sự kiện click vào nút gửi
-    submitButton.addEventListener('click', () => {
-        // Hiển thị thông báo
-        alert("Gửi thành công!");
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const submitBtn = document.getElementById("submitBtn");
 
-        // Reset biểu mẫu
-        if (contactForm) {
-            contactForm.reset();
-        }
+    submitBtn.addEventListener("click", function () {
+      const name = document.getElementById("fname").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("subject").value.trim();
+      const message = document.getElementById("floatingTextarea").value.trim();
 
-        // Reload trang web
-        window.location.reload();
+      if (!name || !email || !phone || !message) {
+        alert("Vui lòng nhập đầy đủ thông tin: Tên, Email, Số điện thoại và Lời nhắn.");
+        return;
+      }
+
+      alert("Gửi thông tin thành công, Cảm ơn bạn đã đến với TeaBliss!");
+
+      // Reset các trường
+      document.getElementById("fname").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("subject").value = "";
+      document.getElementById("floatingTextarea").value = "";
     });
+  });
 </script>
+
+
+
 </body>
 </html>

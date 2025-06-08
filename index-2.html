@@ -178,7 +178,7 @@
                             <div class="dropdown-account dropdown-login">
                                 <div class="sub-top">
                                     <a id="login_text" href="login.html" class="tf-btn btn-reset">Đăng nhập</a>
-                                    <p class="text-center text-secondary-2">Bạn chưa có tài khoản?
+                                    <p id="signupPrompt" class="text-center text-secondary-2">Bạn chưa có tài khoản?
                                         <a href="create-account.html" class="">Đăng ký</a>
                                     </p>
                                 
@@ -3395,6 +3395,54 @@ document.querySelectorAll('.favourite.cart-item').forEach(icon => {
         }
     });
 });
+</script>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const loginBtn = document.getElementById("login_text");
+    const logoutBtn = document.getElementById("logout");
+    const formBtn = document.getElementById("btnLogin");
+
+    function updateAuthUI() {
+      const isLoggedIn = localStorage.getItem("email") !== null;
+      if (loginBtn) loginBtn.style.display = isLoggedIn ? "none" : "inline-block";
+      if (logoutBtn) logoutBtn.style.display = isLoggedIn ? "inline-block" : "none";
+
+      // Ẩn dòng "Bạn chưa có tài khoản? Đăng ký" nếu đã đăng nhập
+  const signupPrompt = document.getElementById("signupPrompt");
+  if (signupPrompt) signupPrompt.style.display = isLoggedIn ? "none" : "block";
+    }
+
+    updateAuthUI();
+
+    // Xử lý nút đăng nhập trên login.html
+    if (formBtn) {
+      formBtn.onclick = () => {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("Password").value;
+
+        if (!email || !password || !email.includes("@") || password.length < 6) {
+          alert("Vui lòng nhập đúng định dạng email và mật khẩu tối thiểu 6 ký tự.");
+          return;
+        }
+
+        localStorage.setItem("email", email);
+        alert("Đăng nhập thành công!");
+        window.location.href = "index-2.html";
+      }
+    }
+
+    // Xử lý nút đăng xuất
+    if (logoutBtn) {
+      logoutBtn.onclick = (e) => {
+        e.preventDefault();
+        localStorage.removeItem("email");
+        alert("Đã đăng xuất!");
+        updateAuthUI();
+        window.location.href = "index-2.html";
+      };
+    }
+  });
 </script>
 
 </body>
