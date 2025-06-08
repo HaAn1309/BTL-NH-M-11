@@ -2665,6 +2665,32 @@ button {
   justify-content: flex-start;
   gap: 2rem;
 }
+.add-to-cart {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background-color: #54a668;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #54a668;
+  border-radius: 8px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.add-to-cart .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-to-cart:hover {
+  background-color: #3a804d;
+  border-color: #3a804d;
+}
+
 @media (max-width:1200px) {
   .product-info-content .product-quantity {
     flex-direction: column;
