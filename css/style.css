@@ -3666,6 +3666,102 @@ table .ticket-row:hover {
   height: auto !important;
 }
 
+.order-summery .wrapper-heading {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.order-summery .subtotal {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0px;
+}
+.order-summery .subtotal .product-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+}
+.order-summery .subtotal .product-list li {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0px;
+}
+.order-summery .subtotal .product-list .product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+.order-summery .subtotal .product-list .product-info .wrapper-heading {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.order-summery .subtotal .product-list .product-info .paragraph {
+  font-size: 1.3rem;
+}
+.order-summery .total .wrapper-heading {
+  font-size: 2.5rem;
+}
+.order-summery .total .price {
+  color: #34a853;
+}
+.order-summery .payment-type {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0px;
+}
+.order-summery .payment-type .wrapper-heading {
+  font-size: 2rem;
+}
+.order-summery .payment-type .checkbox-item {
+  gap: 2rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  padding: 2rem;
+}
+.order-summery .payment-type .checkbox-item input {
+  accent-color: #34a853;
+}
+.order-summery .payment-type .checkbox-item:hover {
+  background-color: rgba(52, 168, 83, 0.06);
+}
+.order-summery .payment-type .inner-text {
+  display: block;
+  color: #797979;
+}
+
+.order {
+  background: #ffffff;
+}
+.order .order-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.order .order-section .review-form {
+  width: 100% !important;
+  height: auto;
+  padding: 0;
+  margin-top: 1rem;
+}
+.order .order-section .review-form .shop-btn {
+  width: auto;
+}
+
+
 .login-section .review-form {
   width: 51.2rem;
   height: 63rem;
